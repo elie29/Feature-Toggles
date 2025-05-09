@@ -45,7 +45,7 @@ public class EmployeeService : IEmployeeService
         }
         if (review == null || await _repository.GetByIdAsync(review.EmployeeId) == null)
         {
-            throw new InvalidOperationException("Invalid review data with inexistant employee ID.");
+            throw new InvalidOperationException("Invalid review data with non-existent employee ID.");
         }
         return await _repository.CreatePerformanceReviewAsync(review);
     }
