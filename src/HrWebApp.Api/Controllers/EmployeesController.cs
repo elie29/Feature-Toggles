@@ -1,7 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.FeatureManagement;
 using HrWebApp.Api.Models;
 using HrWebApp.Api.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HrWebApp.Api.Controllers;
 

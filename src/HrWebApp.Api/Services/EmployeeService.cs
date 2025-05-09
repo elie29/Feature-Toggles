@@ -1,6 +1,6 @@
-using Microsoft.FeatureManagement;
 using HrWebApp.Api.Models;
 using HrWebApp.Api.Repository;
+using Microsoft.FeatureManagement;
 
 namespace HrWebApp.Api.Services;
 

@@ -1,7 +1,7 @@
-using Microsoft.FeatureManagement;
-using HrWebApp.Api.Services;
 using HrWebApp.Api.Filters;
 using HrWebApp.Api.Repository;
+using HrWebApp.Api.Services;
+using Microsoft.FeatureManagement;
 
 var builder = WebApplication.CreateBuilder(args);
 
