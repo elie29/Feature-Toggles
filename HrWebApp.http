@@ -1,3 +1,7 @@
+# Requests can be executed in:
+# - IntelliJ (https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)
+# - VS Code (https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
+
 @baseUrl = http://localhost:5000
 @featureHeader = X-Feature-Flag
 
