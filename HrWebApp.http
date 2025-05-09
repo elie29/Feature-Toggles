@@ -1,0 +1,66 @@
+@baseUrl = http://localhost:5000
+@featureHeader = X-Feature-Flag
+
+### Get all employees
+GET {{baseUrl}}/api/employees
+Accept: application/json
+
+### Get employee by ID
+GET {{baseUrl}}/api/employees/1
+Accept: application/json
+
+### Get employee by ID (not found)
+GET {{baseUrl}}/api/employees/999
+Accept: application/json
+
+### Get performance review (feature disabled)
+GET {{baseUrl}}/api/employees/1/performance-review
+Accept: application/json
+
+### Get performance review (feature enabled via header)
+GET {{baseUrl}}/api/employees/1/performance-review
+Accept: application/json
+{{featureHeader}}: NewPerformanceReviewSystem=true
+
+### Get performance review (not found - feature enabled via header)
+GET {{baseUrl}}/api/employees/10/performance-review
+Accept: application/json
+{{featureHeader}}: NewPerformanceReviewSystem=true
+
+### Create performance review (feature disabled)
+POST {{baseUrl}}/api/employees/1/performance-review
+Content-Type: application/json
+Accept: application/json
+
+{
+    "reviewDate": "2024-03-20",
+    "reviewerName": "Sarah Johnson",
+    "rating": 4,
+    "comments": "Great performance this quarter!"
+}
+
+### Create performance review (feature enabled via header)
+POST {{baseUrl}}/api/employees/1/performance-review
+Content-Type: application/json
+Accept: application/json
+{{featureHeader}}: NewPerformanceReviewSystem=true
+
+{
+    "reviewDate": "2024-03-20",
+    "reviewerName": "Sarah Johnson",
+    "rating": 4,
+    "comments": "Great performance this quarter!"
+}
+
+### Create performance review (feature enabled via header with invalid Employee ID)
+POST {{baseUrl}}/api/employees/10/performance-review
+Content-Type: application/json
+Accept: application/json
+{{featureHeader}}: NewPerformanceReviewSystem=true
+
+{
+    "reviewDate": "2024-03-20",
+    "reviewerName": "Sarah Johnson",
+    "rating": 4,
+    "comments": "Great performance this quarter!"
+}
